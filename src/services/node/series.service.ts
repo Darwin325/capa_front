@@ -23,3 +23,12 @@ export const createSerie = async (serie: {
     console.error(error)
   }
 }
+
+export const deleteSerie = async (id: number) => {
+  try {
+    const response = await axios.delete(`/series/${id}`)
+    return response.data
+  } catch (error) {
+    console.error(error)
+  }
+}

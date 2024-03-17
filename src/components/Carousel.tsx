@@ -21,7 +21,7 @@ export function Carousel({ children }: { children: JSX.Element }) {
     <div className="w-full bg-gray-800 h-96 flex flex-col justify-center items-center">
       {/* controls */}
 
-      <button className="self-start ml-2 mt-2 py-1 px-2 rounded-md bg-gray-600">
+      <button className="self-start ml-4 mt-2 py-1 px-2 rounded-md bg-gray-600">
         <Link to={Routes.NEW_SERIES}>Nueva Serie</Link>
       </button>
       <div className="flex justify-between w-full flex-col">
