@@ -13,6 +13,12 @@ const NextSeries = lazy(() =>
   }))
 )
 
+const NewSeries = lazy(() =>
+  import("@/pages/series/NewSerie").then((module) => ({
+    default: module.NewSerie,
+  }))
+)
+
 function App() {
   return (
     <>
@@ -24,6 +30,7 @@ function App() {
               <Routes>
                 <Route path={RoutesEnum.SERIES} element={<Series />} />
                 <Route path={RoutesEnum.NEXT_SERIES} element={<NextSeries />} />
+                <Route path={RoutesEnum.NEW_SERIES} element={<NewSeries />} />
               </Routes>
             </Router>
           </div>

@@ -1,4 +1,6 @@
+import { Routes } from "@/enums/routes.enum"
 import { Children, useState } from "react"
+import { Link } from "react-router-dom"
 
 export function Carousel({ children }: { children: JSX.Element }) {
   const [indicator, setIndicator] = useState(0)
@@ -16,8 +18,12 @@ export function Carousel({ children }: { children: JSX.Element }) {
   }
 
   return (
-    <div className="w-full bg-gray-800 h-96 flex items-center">
+    <div className="w-full bg-gray-800 h-96 flex flex-col justify-center items-center">
       {/* controls */}
+
+      <button className="self-start ml-2 mt-2 py-1 px-2 rounded-md bg-gray-600">
+        <Link to={Routes.NEW_SERIES}>Nueva Serie</Link>
+      </button>
       <div className="flex justify-between w-full flex-col">
         <div className="flex justify-between w-full">
           <button className="p-4 text-3xl hover:bg-gray-700" onClick={prev}>

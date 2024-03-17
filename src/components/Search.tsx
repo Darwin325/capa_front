@@ -1,10 +1,7 @@
 import { useSeriesStore } from "@/store/series.store"
 
 export function Search({ getSeries, placeholder }) {
-  const [series, setSeries] = useSeriesStore((state) => [
-    state.series,
-    state.setSeries,
-  ])
+  const [setSeries] = useSeriesStore((state) => [state.setSeries])
 
   const handleSearch = async (search: string) => {
     const series = await getSeries({ search })
