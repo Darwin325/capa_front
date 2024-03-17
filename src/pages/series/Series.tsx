@@ -1,15 +1,18 @@
 import { Carousel } from "@/components/Carousel"
-import { Serie } from "@/models/series.model"
 import { getSeries } from "@/services/node/series.service"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { CardSeries } from "./CardSeries"
+import { useSeriesStore } from "@/store/series.store"
 
 export function Series() {
-  const [series, setSeries] = useState<Serie[]>()
+  const [series, setSeries] = useSeriesStore((state) => [
+    state.series,
+    state.setSeries,
+  ])
 
   useEffect(() => {
     const main = async () => {
-      const series = await getSeries()
+      const series = await getSeries({ search: "" })
       setSeries(series.data)
     }
     main()
@@ -17,9 +20,11 @@ export function Series() {
   return (
     <div className="flex flex-wrap justify-between gap-6 mt-4">
       <Carousel>
-        {series?.map((serie) => (
-          <CardSeries key={serie.id} {...serie} />
-        ))}
+        {series.length > 0 ? (
+          series?.map((serie) => <CardSeries key={serie.id} {...serie} />)
+        ) : (
+          <h1 className="text-3xl">No hay series</h1>
+        )}
       </Carousel>
     </div>
   )

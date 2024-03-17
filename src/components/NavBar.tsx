@@ -1,5 +1,7 @@
 import { Routes } from "@/enums/routes.enum"
 import { Link } from "react-router-dom"
+import { Search } from "./Search"
+import { getSeries } from "@/services/node/series.service"
 
 export function Navbar() {
   return (
@@ -15,11 +17,7 @@ export function Navbar() {
         </ul>
 
         <section className="self-center m-2">
-          <input
-            type="text"
-            placeholder="Buscar serie"
-            className="py-1 px-3 rounded-md"
-          />
+          <Search getSeries={getSeries} placeholder="Buscar serie por nombre" />
         </section>
       </div>
     </nav>
