@@ -1,11 +1,16 @@
 import "./App.css"
-import { Series } from "@/pages/Series"
+import { Series } from "@/pages/series/Series"
+import { Navbar } from "@/components/NavBar"
 
 function App() {
   return (
     <>
-      <Series />
-      <h1 className="text-red-500">Hello world jaj!</h1>
+      <section className="flex flex-col w-full">
+        <div className="max-w-9/12">
+          <Navbar />
+          <Series />
+        </div>
+      </section>
     </>
   )
 }
