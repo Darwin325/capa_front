@@ -24,7 +24,7 @@ export function Carousel({ children }: { children: JSX.Element }) {
             {" "}
             {"<"}
           </button>
-          <div className="flex overflow-hidden">
+          <div className="flex overflow-hidden w-7/12">
             {Children.toArray(children)[indicator]}
           </div>
           <button className="p-4 text-3xl hover:bg-gray-700" onClick={next}>

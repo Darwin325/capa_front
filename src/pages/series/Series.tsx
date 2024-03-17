@@ -1,6 +1,6 @@
 import { Carousel } from "@/components/Carousel"
 import { Serie } from "@/models/series.model"
-import { getSeries } from "@/services/series.service"
+import { getSeries } from "@/services/node/series.service"
 import { useEffect, useState } from "react"
 import { CardSeries } from "./CardSeries"
 

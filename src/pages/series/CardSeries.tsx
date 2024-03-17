@@ -12,7 +12,7 @@ export function CardSeries({
   return (
     <div
       data-id={`card_${id}`}
-      className="rounded-lg text-center shadow-md p-4 border border-gray-600 min-w-72 flex-auto max-w-96"
+      className="rounded-lg text-center shadow-md py-8 border border-gray-600 w-[400px] flex-auto max-w-5xl"
     >
       <h2 className="text-2xl font-semibold">{title}</h2>
       <p className="text-gray-600 text-xl font-bold">{channel}</p>
